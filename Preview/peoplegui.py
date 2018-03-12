@@ -18,6 +18,7 @@ def makeWidgets():
         lab.grid(row=ix, column=0)
         ent.grid(row=ix, column=1)
         entries[label] = ent
+        #print(ent.get())
     Button(window, text='Fetch', command=fetchRecord).pack(side=LEFT)
     Button(window, text='Update', command=updateRecord).pack(side=LEFT)
     Button(window, text='Quit', command=window.quit).pack(side=RIGHT)
@@ -33,6 +34,7 @@ def fetchRecord():
         for field in fieldname:
             entries[field].delete(0, END)
             entries[field].insert(0, repr(getattr(record, field)))
+            print(entries[field].get(), getattr(record, field))
 
 def updateRecord():
     key = entries['key'].get()
@@ -43,6 +45,7 @@ def updateRecord():
         record = Person(name='?', age='?')
     for field in fieldname:
         setattr(record, field, eval(entries[field].get()))
+        print(entries[field].get())
     db[key] = record
 
 db = shelve.open(shelvename)
