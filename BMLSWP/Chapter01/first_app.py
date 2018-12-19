@@ -57,12 +57,12 @@ f10 = sp.poly1d(fp10)
 print(error(f10, x, y))
 plt.plot(fx, f10(fx), linewidth=2)
 plt.legend(["d = %i" % f10.order], loc="upper left")
-'''
+
 fp100 = sp.polyfit(x, y, 30)
 f100 = sp.poly1d(fp100)
 print(error(f100, x, y))
 plt.plot(fx, f100(fx), linewidth=2)
 plt.legend(["d = %i" % f100.order], loc="upper left")
-'''
+
 plt.grid()
 plt.show()
