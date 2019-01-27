@@ -1,0 +1,11 @@
+'''
+def scanner(name, function):
+    file = open(name, 'r')
+    while True:
+        line = file.readline()
+        if not line: break
+        function(line)
+    file.close()
+'''
+def scanner(name, function):
+    list(map(function, open(name, 'r')))
