@@ -5,6 +5,7 @@ while True:
     parm += 1
     pid = os.fork()
     if pid == 0:
+        #os.execvp('python',('python', 'child.py', str(parm)))
         os.execlp('python', 'python', 'child.py', str(parm))
         assert False, 'error starting program'
     else:
