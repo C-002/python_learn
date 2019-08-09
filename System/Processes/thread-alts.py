@@ -1,4 +1,5 @@
 import _thread
+import time
 
 def action(i):
     print(i ** 32)
@@ -16,4 +17,6 @@ _thread.start_new_thread((lambda: action(2)), ())
 
 obj = Power(2)
 _thread.start_new_thread(obj.action, ())
+
+time.sleep(2)   #wait for end of threads
 
