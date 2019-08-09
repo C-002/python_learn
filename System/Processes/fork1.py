@@ -9,6 +9,7 @@ def child():
 def parent():
     while True:
         newpid = os.fork()
+        print(newpid)
         if newpid == 0:
             child()
         else:
